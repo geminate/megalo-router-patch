@@ -1,10 +1,10 @@
 {
   "name": "megalo-router-patch",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "在 megalo 中使用 vue-router 的路由写法",
   "main": "dist/index.js",
   "scripts": {
-    "watch": "babel src -d dist -w"
+    "watch": "babel src -d dist -w --presets babel-preset-es2015"
   },
   "repository": {
     "type": "git",
@@ -23,7 +23,6 @@
   "homepage": "https://github.com/geminate/megalo-router-patch#readme",
   "devDependencies": {
     "babel-cli": "^6.26.0",
-    "babel-preset-es2015": "^6.24.1",
-    "babel-preset-stage-1": "^6.24.1"
+    "babel-preset-es2015": "^6.24.1"
   }
 }
