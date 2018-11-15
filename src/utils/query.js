@@ -38,7 +38,6 @@ const parseRoute = ($mp) => {
     const path = _$mp.page && _$mp.page.route;
     return {
         path: `/${path}`,
-        params: {},
         query: _$mp.query,
         hash: '',
         fullPath: parseUrl({
