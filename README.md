@@ -1,5 +1,5 @@
 # megalo-router-patch
-> 在 megalo 中使用 vue-router 的路由写法, 可自动转换为对应小程序的路由写法。
+> 在 [megalo](https://github.com/kaola-fed/megalo) 中使用 vue-router 的路由写法, 可自动转换为对应小程序的路由写法。
 
 ## 安装
 ``` bash
@@ -96,5 +96,9 @@ this.$router.back()
 "pagesHomeIndex"
 ```
 
+## TODO
+- [ ] 导航守卫
 
+
+***
 > 参考自 [mpvue-router-patch](https://github.com/F-loat/mpvue-router-patch)
