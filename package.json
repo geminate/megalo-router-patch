@@ -1,6 +1,6 @@
 {
   "name": "megalo-router-patch",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "在 megalo 中使用 vue-router 的路由写法",
   "main": "dist/index.js",
   "scripts": {
