@@ -13,20 +13,27 @@ const routerPatch = {
         let _route = {};
         let _router = {};
 
+        const handleMixin = (that) => {
+            if (that.$parent) return;
+            const {$mp} = that.$root;
+            _route = parseRoute($mp);
+            _router = {
+                app: that,
+                mode: 'history',
+                currentRoute: _route,
+                push: (location, complete, fail, success) => push(location, complete, fail, success, $mp.platform),
+                replace: (location, complete, fail, success) => replace(location, complete, fail, success, $mp.platform),
+                go: (delta) => go(delta, $mp.platform),
+                back: () => back($mp.platform)
+            };
+        };
+
         Vue.mixin({
+            onShow() {
+                handleMixin(this);
+            },
             created() {
-                if (this.$parent) return;
-                const {$mp} = this.$root;
-                _route = parseRoute($mp);
-                _router = {
-                    app: this,
-                    mode: 'history',
-                    currentRoute: _route,
-                    push: (location, complete, fail, success) => push(location, complete, fail, success, $mp.platform),
-                    replace: (location, complete, fail, success) => replace(location, complete, fail, success, $mp.platform),
-                    go: (delta) => go(delta, $mp.platform),
-                    back: () => back($mp.platform)
-                };
+                handleMixin(this);
             }
         });
 
@@ -43,5 +50,6 @@ const routerPatch = {
         });
     }
 };
+
 
 export default routerPatch;
